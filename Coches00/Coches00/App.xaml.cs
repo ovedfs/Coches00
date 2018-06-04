@@ -5,16 +5,36 @@ using Xamarin.Forms.Xaml;
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace Coches00
 {
-	public partial class App : Application
-	{
-		public App ()
-		{
-			InitializeComponent();
+    public partial class App : Application
+    {
+        private const string isLoggedInProperty = "UserLoggedIn";
 
-			MainPage = new NavigationPage(new MainPage());
-		}
+        public App()
+        {
+            InitializeComponent();
 
-		protected override void OnStart ()
+            MainPage = new NavigationPage(new MainPage());
+        }
+
+        public bool IsLoggedIn
+        {
+            get
+            {
+                if (Properties.ContainsKey(isLoggedInProperty))
+                {
+                    return (bool)Properties[isLoggedInProperty];
+                }
+
+                Properties[isLoggedInProperty] = false;
+                return (bool)Properties[isLoggedInProperty];
+            }
+            set
+            {
+                Properties[isLoggedInProperty] = value;
+            }
+        }
+
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}

@@ -18,7 +18,9 @@ namespace Coches00
         {
             base.OnAppearing();
 
-            if (!Application.Current.Properties.ContainsKey("IsLoggedIn") || (bool)Application.Current.Properties["IsLoggedIn"] == false)
+            var app = Application.Current as App;
+
+            if (!app.IsLoggedIn)
             {
                 await Navigation.PushAsync(new LoginPage());
             }
