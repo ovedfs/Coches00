@@ -12,6 +12,18 @@ namespace Coches00
 		public MainPage()
 		{
 			InitializeComponent();
-		}
-	}
+        }
+
+        async protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (!Application.Current.Properties.ContainsKey("IsLoggedIn") || (bool)Application.Current.Properties["IsLoggedIn"] == false)
+            {
+                await Navigation.PushAsync(new LoginPage());
+            }
+
+            NavigationPage.SetHasBackButton(this, false);
+        }
+    }
 }
