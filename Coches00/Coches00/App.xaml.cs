@@ -1,3 +1,4 @@
+using Coches00.Models;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -7,30 +8,54 @@ namespace Coches00
 {
     public partial class App : Application
     {
-        private const string isLoggedInProperty = "UserLoggedIn";
+        private const string loginKey = "UserLoggedIn";
+        private const string userKey = "User";
 
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            if (IsLoggedIn && UserData != null)
+            {
+                MainPage = new NavigationPage(new MainPage(UserData));
+            }
+
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         public bool IsLoggedIn
         {
             get
             {
-                if (Properties.ContainsKey(isLoggedInProperty))
+                if (Properties.ContainsKey(loginKey))
                 {
-                    return (bool)Properties[isLoggedInProperty];
+                    return (bool)Properties[loginKey];
                 }
 
-                Properties[isLoggedInProperty] = false;
-                return (bool)Properties[isLoggedInProperty];
+                Properties[loginKey] = false;
+                return (bool)Properties[loginKey];
             }
             set
             {
-                Properties[isLoggedInProperty] = value;
+                Properties[loginKey] = value;
+            }
+        }
+
+        public User UserData
+        {
+            get
+            {
+                if (Properties.ContainsKey(userKey))
+                {
+                    return (User)Properties[userKey];
+                }
+
+                Properties[userKey] = null;
+                return (User)Properties[userKey];
+            }
+            set
+            {
+                Properties[userKey] = value;
             }
         }
 

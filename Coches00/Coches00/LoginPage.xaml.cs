@@ -22,14 +22,6 @@ namespace Coches00
         {
             base.OnAppearing();
 
-            /*var app = Application.Current as App;
-
-            if (!app.IsLoggedIn)
-            {
-                Application.Current.Properties["IsLoggedIn"] = false; // refactor this with udemy code...
-                await Application.Current.SavePropertiesAsync();
-            }*/
-
             NavigationPage.SetHasBackButton(this, false);
         }
 
@@ -45,13 +37,12 @@ namespace Coches00
 
             await DisplayAlert("User", "Datos correctos, bienvenido(a) " + user.Name, "OK");
 
-            var app = Application.Current as App;
-            //Application.Current.Properties["IsLoggedIn"] = true;
-            app.IsLoggedIn = true;
-            await app.SavePropertiesAsync();
-            //await Application.Current.SavePropertiesAsync();
+            (Application.Current as App).IsLoggedIn = true;
+            (Application.Current as App).UserData = user;
 
-            await Navigation.PushAsync(new MainPage());
+            await (Application.Current as App).SavePropertiesAsync();
+
+            await Navigation.PushAsync(new MainPage(user));
         }
 
         async private void RegisterButton_Clicked(object sender, EventArgs e)
