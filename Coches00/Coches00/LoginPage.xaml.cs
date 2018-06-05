@@ -18,15 +18,9 @@ namespace Coches00
 			InitializeComponent ();  
         }
 
-        async protected override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            if (!Application.Current.Properties.ContainsKey("IsLoggedIn"))
-            {
-                Application.Current.Properties["IsLoggedIn"] = false; // refactor this with udemy code...
-                await Application.Current.SavePropertiesAsync();
-            }
 
             NavigationPage.SetHasBackButton(this, false);
         }
@@ -43,10 +37,12 @@ namespace Coches00
 
             await DisplayAlert("User", "Datos correctos, bienvenido(a) " + user.Name, "OK");
 
-            Application.Current.Properties["IsLoggedIn"] = true;
-            await Application.Current.SavePropertiesAsync();
+            (Application.Current as App).IsLoggedIn = true;
+            (Application.Current as App).UserData = user;
 
-            await Navigation.PushAsync(new MainPage());
+            await (Application.Current as App).SavePropertiesAsync();
+
+            await Navigation.PushAsync(new MainPage(user));
         }
 
         async private void RegisterButton_Clicked(object sender, EventArgs e)
