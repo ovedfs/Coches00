@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Coches00.AddCarPage"
+             Title="Agregar Coche">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Entry x:Name="entryPlacas" Placeholder="Placas..."/>
+            <Entry x:Name="entryMarca" Placeholder="Marca..."/>
+            <Entry x:Name="entryModelo" Placeholder="Modelo" Keyboard="Numeric"/>
+          
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="ChoiceFoto" Text="Elige foto..." Clicked="ChoiceFoto_Clicked" HorizontalOptions="Start"/>
+                <Image x:Name="foto" WidthRequest="80" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Picker x:Name="ColorPicker" Title="Elige el color" WidthRequest="200" HorizontalOptions="StartAndExpand"/>
+                <BoxView x:Name="ColorBoxView" WidthRequest="50" HeightRequest="50" HorizontalOptions="End"/>
+            </StackLayout>
+            
+            <Picker x:Name="CityPicker" Title="Elige la ciudad" WidthRequest="200"/>
+            <Entry x:Name="entryAlias" Placeholder="Alias"/>
+            <StackLayout Margin="0,30" Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="SaveButton" Text="Guardar"
+                        Clicked="SaveButton_Clicked"
+                        BackgroundColor="OrangeRed"
+                        TextColor="White"/>
+                <Button x:Name="CancelButton" Text="Cancelar"
+                        Clicked="CancelButton_Clicked"
+                        BackgroundColor="Gray"
+                        TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

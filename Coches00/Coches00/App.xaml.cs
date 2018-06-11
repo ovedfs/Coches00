@@ -1,4 +1,5 @@
 using Coches00.Models;
+using Newtonsoft.Json;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -19,8 +20,10 @@ namespace Coches00
             {
                 MainPage = new NavigationPage(new MainPage(UserData));
             }
-
-            MainPage = new NavigationPage(new LoginPage());
+            else
+            {
+                MainPage = new NavigationPage(new LoginPage());
+            }
         }
 
         public bool IsLoggedIn
@@ -32,8 +35,7 @@ namespace Coches00
                     return (bool)Properties[loginKey];
                 }
 
-                Properties[loginKey] = false;
-                return (bool)Properties[loginKey];
+                return false;
             }
             set
             {
@@ -47,15 +49,14 @@ namespace Coches00
             {
                 if (Properties.ContainsKey(userKey))
                 {
-                    return (User)Properties[userKey];
+                    return JsonConvert.DeserializeObject<User>(Current.Properties[userKey].ToString());
                 }
 
-                Properties[userKey] = null;
-                return (User)Properties[userKey];
+                return null;
             }
             set
             {
-                Properties[userKey] = value;
+                Properties[userKey] = JsonConvert.SerializeObject(value);
             }
         }
 
