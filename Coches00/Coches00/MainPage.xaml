@@ -9,10 +9,10 @@
         <ToolbarItem Text="+ Coche" Clicked="ToolbarItem_Clicked"/>
     </ContentPage.ToolbarItems>
 
-    <StackLayout>
+    <StackLayout Padding="10,0">
         <Label x:Name="labelUser" Text="{Binding Name}" HorizontalOptions="Center"
                Margin="10" FontSize="20"/>
-        <ListView x:Name="CarsListView" VerticalOptions="CenterAndExpand" HasUnevenRows="True">
+        <ListView x:Name="CarsListView" HasUnevenRows="True" ItemSelected="CarsListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

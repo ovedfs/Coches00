@@ -39,5 +39,12 @@ namespace Coches00
         {
             await Navigation.PushAsync(new AddCarPage());
         }
+
+        async private void CarsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var car = e.SelectedItem as Car;
+
+            await Navigation.PushAsync(new CarDetailPage(car));
+        }
     }
 }

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:pages="clr-namespace:Coches00"
+            x:Class="Coches00.CarDetailPage"
+             Title="{Binding Alias}">
+    <ContentPage Title="Details">
+        <StackLayout Padding="20">
+            <Image Source="{Binding Foto}"/>
+            <TableView>
+                <TableRoot>
+                    <TableSection Title="DATOS DEL COCHE">
+                        <TextCell Text="Placas" Detail="{Binding Placas}"/>
+                        <TextCell Text="Marca" Detail="{Binding Marca}"/>
+                        <TextCell Text="Modelo" Detail="{Binding Modelo}"/>
+                        <TextCell Text="Estado" Detail="{Binding Estado}"/>
+                        <TextCell Text="Color" Detail="{Binding Color}"/>
+                        <TextCell Text="Alias" Detail="{Binding Alias}"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="Documentos">
+        <Label Text="Aquí van los documentos..."/>
+    </ContentPage>
+
+    <ContentPage Title="Multas">
+        <Label Text="Aquí van las multas..."/>
+    </ContentPage>
+
+    <ContentPage Title="Tenencias">
+        <Label Text="Aquí van las tenencias..."/>
+    </ContentPage>
+
+    <ContentPage Title="Verificaciones">
+        <Label Text="Aquí van las verificaciones..."/>
+    </ContentPage>
+
+    <ContentPage Title="Servicios">
+        <Label Text="Aquí van los servicios..."/>
+    </ContentPage>
+</TabbedPage>

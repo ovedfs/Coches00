@@ -21,7 +21,7 @@ namespace Coches00
 
                 return filePath;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //System.Console.WriteLine(ex.ToString());
                 return "Error";
