@@ -1,44 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:pages="clr-namespace:Coches00"
+            xmlns:Local="clr-namespace:Coches00"
             x:Class="Coches00.CarDetailPage"
-             Title="{Binding Alias}">
-    <ContentPage Title="Details">
-        <StackLayout Padding="20">
-            <Image Source="{Binding Foto}"/>
-            <TableView>
-                <TableRoot>
-                    <TableSection Title="DATOS DEL COCHE">
-                        <TextCell Text="Placas" Detail="{Binding Placas}"/>
-                        <TextCell Text="Marca" Detail="{Binding Marca}"/>
-                        <TextCell Text="Modelo" Detail="{Binding Modelo}"/>
-                        <TextCell Text="Estado" Detail="{Binding Estado}"/>
-                        <TextCell Text="Color" Detail="{Binding Color}"/>
-                        <TextCell Text="Alias" Detail="{Binding Alias}"/>
-                    </TableSection>
-                </TableRoot>
-            </TableView>
-        </StackLayout>
-    </ContentPage>
+            Title="{Binding Alias}"
+            BarBackgroundColor="#FFA000"
+            BarTextColor="White">
 
-    <ContentPage Title="Documentos">
+    <Local:DetailsPage Icon="details.png"/>
+
+    <ContentPage Icon="files.png">
         <Label Text="Aquí van los documentos..."/>
     </ContentPage>
 
-    <ContentPage Title="Multas">
+    <ContentPage Icon="money.png">
         <Label Text="Aquí van las multas..."/>
     </ContentPage>
 
-    <ContentPage Title="Tenencias">
+    <ContentPage Icon="car.png">
         <Label Text="Aquí van las tenencias..."/>
     </ContentPage>
 
-    <ContentPage Title="Verificaciones">
+    <ContentPage Icon="verify.png">
         <Label Text="Aquí van las verificaciones..."/>
     </ContentPage>
 
-    <ContentPage Title="Servicios">
+    <ContentPage Icon="service.png">
         <Label Text="Aquí van los servicios..."/>
     </ContentPage>
 </TabbedPage>

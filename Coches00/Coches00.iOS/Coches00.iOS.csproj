@@ -169,4 +169,16 @@
   <ItemGroup>
     <BundleResource Include="Resources\coche01.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\clip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\files.png" />
+  </ItemGroup>
 </Project>
