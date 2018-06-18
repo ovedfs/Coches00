@@ -131,6 +131,11 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="car.png" />
+    <Content Include="clip.png" />
+    <Content Include="coche01.jpg" />
+    <Content Include="dollar.png" />
+    <Content Include="files.png" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +149,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="pt.Xamarin.Plugin.FilePicker">
+      <Version>1.3.11</Version>
+    </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.4.118</Version>
     </PackageReference>

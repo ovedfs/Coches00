@@ -148,6 +148,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="pt.Xamarin.Plugin.FilePicker">
+      <Version>1.3.11</Version>
+    </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.4.118</Version>
     </PackageReference>
@@ -162,5 +165,20 @@
       <Project>{4CEB7E8B-95BB-4B55-B69C-849DF9A77D22}</Project>
       <Name>Coches00</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\coche01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\clip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\files.png" />
   </ItemGroup>
 </Project>

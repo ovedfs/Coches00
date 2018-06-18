@@ -3,6 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Coches00.App">
 	<Application.Resources>
-    
-	</Application.Resources>
+        <!-- Styles -->
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="OrangeRed"/>
+            <Setter Property="BarTextColor" Value="White"/>
+        </Style>
+        <!-- Styles -->
+    </Application.Resources>
 </Application>

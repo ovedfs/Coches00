@@ -5,12 +5,28 @@
              x:Class="Coches00.MainPage"
              Title="Mis Coches">
 
-    <StackLayout>
-        <Label x:Name="labelUser"/>
-        <ListView x:Name="CarsListView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+ Coche" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="10,0">
+        <Label x:Name="labelUser" Text="{Binding Name}" HorizontalOptions="Center"
+               Margin="10" FontSize="20"/>
+        <ListView x:Name="CarsListView" HasUnevenRows="True" ItemSelected="CarsListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell Text="{Binding Placas}" Detail="{Binding Marca}" ImageSource="{Binding Photo}"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding Foto}" WidthRequest="100" HorizontalOptions="Start"/>
+                            <StackLayout Padding="5">
+                                <Label Text="{Binding Placas}" FontAttributes="Bold"/>
+                                <StackLayout>
+                                    <Label Text="{Binding Marca}"/>
+                                    <Label Text="{Binding Modelo}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

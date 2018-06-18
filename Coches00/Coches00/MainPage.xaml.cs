@@ -1,4 +1,5 @@
 ﻿using Coches00.Models;
+using System;
 using Xamarin.Forms;
 
 namespace Coches00
@@ -7,26 +8,43 @@ namespace Coches00
 	{
         protected User user;
 
-		public MainPage(User user)
+		public MainPage(User loggedUser)
 		{
 			InitializeComponent();
-            this.user = user;
+
+            if (!(Application.Current as App).IsLoggedIn)
+            {
+                Navigation.PushAsync(new LoginPage());
+            }
+
+            //Console.WriteLine((Application.Current as App).IsLoggedIn);
+            //Console.WriteLine(loggedUser.Name);
+
+            this.user = loggedUser;
+            BindingContext = loggedUser;
         }
 
         async protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            if (!(Application.Current as App).IsLoggedIn)
-            {
-                await Navigation.PushAsync(new LoginPage());
-            }
-
             NavigationPage.SetHasBackButton(this, false);
 
-            var cars = await CarHelper.GetCars(user);
+            var cars = await CarHelper.GetCars(this.user);
 
             CarsListView.ItemsSource = cars;
+        }
+
+        async private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddCarPage());
+        }
+
+        async private void CarsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var car = e.SelectedItem as Car;
+
+            await Navigation.PushAsync(new CarDetailPage(car));
         }
     }
 }

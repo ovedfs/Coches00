@@ -15,6 +15,7 @@ namespace Coches00.Models
         [Indexed]
         public int UserId { get; set; }
 
+        [Unique]
         public string Placas { get; set; }
         public string Marca { get; set; }
         public int Modelo { get; set; }
