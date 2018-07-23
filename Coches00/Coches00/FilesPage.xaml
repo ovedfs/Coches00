@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Coches00.FilesPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+ Archivo" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="10,0">
+        <Label x:Name="labelUser" Text="Documentos" HorizontalOptions="Center"
+               Margin="10" FontSize="20"/>
+        <ListView x:Name="FilesListView" HasUnevenRows="True" ItemSelected="FilesListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Titulo}" Detail="{Binding Descripcion}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
