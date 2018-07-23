@@ -10,9 +10,7 @@
 
     <Local:DetailsPage Icon="details.png"/>
 
-    <ContentPage Icon="files.png">
-        <Label Text="Aquí van los documentos..."/>
-    </ContentPage>
+    <Local:FilesPage Icon="files.png"/>
 
     <ContentPage Icon="money.png">
         <Label Text="Aquí van las multas..."/>
