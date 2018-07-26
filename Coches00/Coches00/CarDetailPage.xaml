@@ -12,16 +12,14 @@
 
     <Local:FilesPage Icon="files.png"/>
 
-    <ContentPage Icon="money.png">
-        <Label Text="Aquí van las multas..."/>
+    <Local:PenaltiesPage Icon="money.png"/>
+
+    <ContentPage Icon="verify.png">
+        <Label Text="Aquí van las verificaciones..."/>
     </ContentPage>
 
     <ContentPage Icon="car.png">
         <Label Text="Aquí van las tenencias..."/>
-    </ContentPage>
-
-    <ContentPage Icon="verify.png">
-        <Label Text="Aquí van las verificaciones..."/>
     </ContentPage>
 
     <ContentPage Icon="service.png">
