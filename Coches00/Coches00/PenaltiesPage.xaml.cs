@@ -29,9 +29,9 @@ namespace Coches00
             PenaltiesListView.ItemsSource = penalties;
         }
 
-        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        async private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync();
+            await Navigation.PushAsync(new AddPenaltyPage());
         }
 
         private void PenaltiesListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

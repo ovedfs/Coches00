@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="Coches00.AddPenaltyPage"
+             Title="Nueva multa">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Fecha de la multa:"/>
+            <DatePicker x:Name="datePickerFechaMulta" MinimumDate="01/01/1990"/>
+
+            <Label Text="Fecha de la multa:"/>
+            <Entry x:Name="entryMonto" Placeholder="Monto de la multa..."/>
+
+            <Label Text="Pagada:"/>
+            <Switch x:Name="switchPagada" IsToggled="False"/>
+
+            <Label Text="Fecha de pago:"/>
+            <DatePicker x:Name="datePickerFechaPago" MinimumDate="01/01/1990"/>
+
+            <Button x:Name="ChoiceFotoMulta" Text="Elige foto de la multa..." Clicked="ChoiceFotoMulta_Clicked"/>
+            <Image x:Name="foto" WidthRequest="80"/>
+
+            <Label Text="Observaciones:"/>
+            <Entry x:Name="entryObservaciones"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="SaveButton" Text="Guardar"
+                        Clicked="SaveButton_Clicked"
+                        BackgroundColor="OrangeRed"
+                        TextColor="White"/>
+                <Button x:Name="CancelButton" Text="Cancelar"
+                        Clicked="CancelButton_Clicked"
+                        BackgroundColor="Gray"
+                        TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
