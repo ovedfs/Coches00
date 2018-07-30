@@ -12,7 +12,22 @@
         <ListView x:Name="PenaltiesListView" HasUnevenRows="True" ItemSelected="PenaltiesListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding FechaMulta}" Detail="{Binding Monto}"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout HorizontalOptions="StartAndExpand">
+                                <Label Text="Fecha:" FontAttributes="Bold"/>
+                                <Label Text="{Binding FechaMulta,StringFormat='{0:dd MMMM, yyyy}'}"/>
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="CenterAndExpand">
+                                <Label Text="Monto:" FontAttributes="Bold"/>
+                                <Label Text="{Binding Monto}"/>
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="EndAndExpand">
+                                <Label Text="Pagada:" FontAttributes="Bold"/>
+                                <Label Text="{Binding Pagada}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

@@ -29,14 +29,15 @@ namespace Coches00
             PenaltiesListView.ItemsSource = penalties;
         }
 
-        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        async private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync();
+            await Navigation.PushAsync(new AddPenaltyPage(BindingContext as Car));
         }
 
-        private void PenaltiesListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async private void PenaltiesListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            var penalty = e.SelectedItem as Penalty;
+            await Navigation.PushAsync(new EditPenaltyPage(penalty));
         }
     }
 }
